@@ -7,10 +7,14 @@
     <style>
         body{
             background-color: grey;
-            border: 1px solid black;
-            padding: 5px;
-            margin-top: 5px;
+            padding: 0px;
         }
+
+        #container{
+            background-color: white;
+            padding: 5px;
+        }
+
         #Header{
             height: 75px;
             font-size: 32px;
@@ -32,12 +36,14 @@
             justify-content: center;
             align-items: center;
         }
-
-        #Section1{
-            margin: 50px 0px;
+        
+        #Section-1{
+            margin-top: 5px;
         }
-
-        #Section-1 .member{
+        #member{
+            margin-bottom: 10px;
+        }
+        .member{
             height: 200px;
             background-color: rgb(182, 182, 33);
             border-radius: 100%;
@@ -50,8 +56,7 @@
             font-size: 24px;
             color: white;
         }
-
-        #Section1::after{
+        #member::after{
             content: '';
             display: block;
             clear: both;
@@ -62,19 +67,28 @@
             width: 100%;
             margin: 10px 0px;
         }
-        #Section-2 #MainContent{
+        #content{
+            margin-bottom: 5px;
+        }
+        #MainContent{
             height: 200px;
             float: left;
-            width: 49.5%;
+            width: 49%;
             background-color: rgb(56, 55, 55) ;
             color:white;
             font-size: 24px;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-right: 5px;
+            margin: 0 0.5% 0 0.5%;
         }
-        #Section-2 .Article{
+        #Article{
+            width: 49%;
+            height: 200px;
+            float: left;
+            margin: 0 0.5% 0 0.5%;
+        }
+        .Article{
             height: 60px;
             background-color: rgba(214, 89, 6, 0.842);
             color: white;
@@ -82,16 +96,16 @@
             justify-content: center;
             align-items: center;
         }
-        #Section2::after{
+        #content::after{
             content: '';
             display: block;
             clear: both;
         }
+
         #Section-3{
             margin: 10px 0px;
         }
-
-        #Section-3 .Box{
+        .Box{
             width: 20%;
             background-color:  rgba(214, 89, 6, 0.842);
             color: white;
@@ -101,8 +115,13 @@
             justify-content: center;
             align-items: center;
         }
+        #Box::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
 
-        #Section-4 #Footer{
+        #Footer {
             height: 50px;
             background-color: violet;
             display: flex;
@@ -113,35 +132,50 @@
         }
     </style>
 </head>
+
 <body >
-    <div id="Header">Header</div>
-    <div id="Banner">Banner</div>
-    <div id="Section-1">
-        <h1 style="text-align: center;color: white;font-size: 24px;">Section-1</h1>
-        <div class="member">photoo1</div>
-        <div class="member">photoo2</div>
-        <div class="member">photoo3</div>
-        <div class="member">photoo4</div>
+    <div id="container">
+
+        <div id="Header">Header</div>
+        <div id="Banner">Banner</div>
+
+        <div id="Section-1">
+            <h1 style="text-align: center;color: black;font-size: 24px;margin-bottom: 2px">Section-1</h1>
+            <div id="member">
+                <div class="member">photoo1</div>
+                <div class="member">photoo2</div>
+                <div class="member">photoo3</div>
+                <div class="member">photoo4</div>
+            </div>
+        </div>
+        
+        <div id="Section-2">
+            <h1 style="text-align: center;color: black;font-size: 24px;margin-bottom: 2px">Section-2</h1>
+            <div id="content">
+                <div id="MainContent">Main Content</div>
+                <div id=Article>
+                    <div class="Article" style="margin: 5px 0px;font-size: 24px">Article-1</div>
+                    <div class="Article" style="font-size: 24px">Article-3</div>
+                    <div class="Article" style="margin: 5px 0px;font-size: 24px">Article-3</div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="Section-3">
+            <h1 style="text-align: center;color: black;font-size: 24px;margin-bottom: 2px">Section-3</h1>
+            <div id="Box">
+                <div class="Box" style="height: 200px;margin: 0px 4% 0px 4%;">Box1</div>
+                <div class="Box" style="height: 200px;margin-right: 2%;">Box2</div>
+                <div class="Box" style="height: 200px;margin-left: 2%;">Box3</div>
+                <div class="Box" style="height: 200px;margin: 0px 4% 0px 4%;">Box4</div>
+            </div>
+        </div>
+        
+        <div id="Section-4">
+            <h1 style="text-align: center;color: black;font-size: 24px;margin-bottom: 2px">Section-4</h1>
+            <div id="Footer">Footer</div>
+        </div>
     </div>
-    <div id="Section-2">
-        <h1 style="text-align: center;color: white;font-size: 24px;">Section-2</h1>
-        <div id="MainContent">Main Content</div>
-        <div style="width: 49.5%;height: 200px;float: right;">
-            <div class="Article" style="margin: 5px 0px;font-size: 24px">Article-1</div>
-            <div class="Article" style="font-size: 24px">Article-3</div>
-            <div class="Article" style="margin: 5px 0px;font-size: 24px">Article-3</div>
-        </div>   
-    </div>
-    <div id="Section-3">
-        <h1 style="text-align: center;color: white;font-size: 24px;">Section-3</h1>
-        <div class="Box" style="height: 200px;margin: 0px 3.5%;">Box1</div>
-        <div class="Box" style="height: 200px;margin-right: 1.5%;">Box2</div>
-        <div class="Box" style="height: 200px;margin-left: 1.5%;">Box3</div>
-        <div class="Box" style="height: 200px;margin: 0px 3.5%;">Box4</div>
-    </div>
-    <div id="Section-4">
-        <h1 style="text-align: center;color: white;font-size: 24px;">Section-4</h1>
-        <div id="Footer">Footer</div>
-    </div>
+
 </body>
 </html>
