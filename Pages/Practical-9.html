@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical-9</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+
+        *{
+            padding: 0px;
+            margin:0px;
+            box-sizing: border-box;
+        }
+
+        html{
+            scroll-padding-top: 55px;
+            scroll-behavior: smooth;
+        }
+
+        .container{
+            background-color: white;
+            position: relative;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        #Header{
+            width: 100%;
+            height: 50px;
+            background-color: lightgray;
+            position: fixed;
+            top: 0px;
+            max-width: 1200px;
+        }
+        #Header #Menu{
+            list-style: none;
+            float: right;    
+        }
+        #Menu li{
+            display: inline-block;
+            line-height: 50px;    
+        }
+        #Menu li a{
+            display: block;
+            padding: 0px 20px;
+            font-size: 24px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: .4s;
+            text-transform: uppercase;
+        }
+        #Menu li a:hover{
+            color: skyblue;
+        }
+        .show-btn, .hide-btn, #check{
+            font-size: 24px;
+            color: white;
+            line-height: 50px;
+            transition: .4s;
+            display: none;
+            float: right;
+        }
+        .show-btn:hover, .hide-btn:hover{
+            color: skyblue;
+        }
+        #check{
+            visibility: hidden;
+            z-index: -10;
+        }
+
+
+        #Banner{
+            margin-top: 60px;
+            height: 400px;
+            background-color: rgb(33, 186, 206);
+            background-image: url("../Images/emile-perron-xrVDYZRGdw4-unsplash.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            display: flex;
+        }
+        #Banner h2{
+            color: white;
+            margin: 20px;
+        }
+
+
+        #Section-1{
+            margin: 35px 0px;
+            width: 100%;
+        }
+        .member{
+            height: 200px;
+            background-color: rgb(182, 182, 33);
+            border-radius: 100%;
+            width: 20%;
+            float: left;
+            margin: 0px 2.5%;
+        }
+        #member::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+
+        #Section-2{
+            margin: 10px 0px;
+        }
+        #content{
+            margin-bottom: 5px;
+        }
+        #MainContent{
+            height: 600px;
+            float: left;
+            width: 50%;
+            background-color: rgb(56, 55, 55) ;
+            color:white;
+            padding: 0 0.5% 0 0.5%;
+            overflow: hidden;
+            text-align: justify;
+        }
+        #Article{
+            width: 50%;
+            height: 600px;
+            float: left;
+            padding: 0% 0.5% 1% 0.5%;
+        }
+        .Article{
+            height: 194px;
+            background-color: rgba(214, 89, 6, 0.842);
+            color: white;
+        }
+        .Article p{
+            color: black;
+            text-align: center;
+            padding: 0px;
+            margin: 0px;
+            font-weight: bold;
+            margin-top: 1px;
+        }
+        #content::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+
+        #Section-3{
+            margin: 30px 0px;
+        }
+        .Box{
+            width: 20%;
+            color: black;
+            float: left;
+            background-color: lightgrey;
+            margin: 0px 2.5%;
+        }
+        .Box img {
+            width: 95%;
+            height: 25vh;
+            margin: 2.5%;
+        }
+        .Box p{
+            font-size: 16px;
+            text-align: justify;
+            margin: 5px;
+            line-height: 24px;
+        }
+        .Box a {
+            color: white;
+            display: block;
+            background-color: red;
+            text-align: center;
+            text-decoration: none;
+        }
+        #Box::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+
+        #Footer {
+            background-color: violet;
+            padding: 5px;
+            color: white;
+        }
+
+
+        @media (min-width: 801px) and (max-width: 1199px){
+
+            html{
+                scroll-padding-top: 50px;
+                scroll-behavior: smooth;
+            }
+            .container{
+                width: 100%;
+            }
+            #Header{
+            width: 100%;
+            height: 50px;
+            background-color: lightgray;
+            padding: 0px 20px;
+            position: fixed;
+            top: 0px;
+            right: 0px;
+            max-width: 1200px;
+            }
+            #Header #Menu{
+            list-style: none;
+            float: right;    
+            }
+            #Menu li{
+            display: inline-block;
+            line-height: 50px;    
+            }
+            #Menu li a{
+            display: block;
+            padding: 0px 15px;
+            font-size: 24px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: .4s;
+            text-transform: uppercase;
+            }
+            #Menu li a:hover{
+            color: skyblue;
+            }
+            .show-btn, .hide-btn, #check{
+            font-size: 24px;
+            color: white;
+            line-height: 50px;
+            transition: .4s;
+            display: none;
+            float: right;
+            }
+            .show-btn:hover, .hide-btn:hover{
+            color: skyblue;
+            }
+            #check{
+            visibility: hidden;
+            z-index: -10;
+            }
+
+
+            #Banner{
+            margin-top: 60px;
+            height: 400px;
+            background-color: rgb(33, 186, 206);
+            background-image: url("../Images/emile-perron-xrVDYZRGdw4-unsplash.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            display: flex;
+            }
+            #Banner h2{
+            color: white;
+            margin: 20px;
+            }
+
+
+            #Section-1{
+            margin: 35px 0px;
+            width: 100%;
+            }
+            .member{
+            height: 200px;
+            background-color: rgb(182, 182, 33);
+            border-radius: 100%;
+            width: 25%;
+            float: left;
+            margin-left: 15%;
+            margin-bottom: 20px;
+            }
+            #member::after{
+            content: '';
+            display: block;
+            clear: both;
+            }
+
+
+            #Section-2{
+            margin: 10px 0px;
+            }
+            #content{
+            margin-bottom: 5px;
+            }
+            #MainContent{
+            height: 600px;
+            float: left;
+            width: 49%;
+            background-color: rgb(56, 55, 55) ;
+            color:white;
+            padding: 0 0.5% 0 0.5%;
+            overflow: hidden;
+            text-align: justify;
+            }
+            #Article{
+            width: 49%;
+            height: 600px;
+            float: left;
+            padding: 0% 0.5% 1% 0.5%;
+            }
+            .Article{
+            height: 194px;
+            background-color: rgba(214, 89, 6, 0.842);
+            color: white;
+            }
+            .Article p{
+            color: black;
+            text-align: center;
+            padding: 0px;
+            margin: 0px;
+            font-weight: bold;
+            margin-top: 1px;
+            }
+            #content::after{
+            content: '';
+            display: block;
+            clear: both;
+            }
+
+
+            #Section-3{
+            margin: 30px 0px;
+            }
+            .Box{
+            width: 40%;
+            color: black;
+            float: left;
+            background-color: lightgrey;
+            margin: 0px 5%;
+            margin-bottom: 15px;
+            }
+            .Box img {
+            width: 95%;
+            height: 25vh;
+            margin: 2.5%;
+            }
+            .Box p{
+            font-size: 20px;
+            text-align: justify;
+            margin: 5px;
+            line-height: 24px;
+            }
+            .Box a {
+            color: white;
+            display: block;
+            font-size: 20px;
+            background-color: red;
+            text-align: center;
+            text-decoration: none;
+            }
+            #Box::after{
+            content: '';
+            display: block;
+            clear: both;
+            }
+
+
+            #Footer {
+            background-color: violet;
+            padding: 5px;
+            color: white;
+
+            }
+        }
+        @media (max-width: 800px)
+        {
+            html{
+                scroll-padding-top: 55px;
+                scroll-behavior: smooth;
+            }
+            .container{
+                width: 100%;
+            }
+            #Header{
+                width: 100%;
+                height: 50px;
+                background-color: lightgray;
+                padding: 0px 20px;
+                position: fixed;
+                top: 0px;
+                right: 0px;
+                max-width: 1200px;
+            }
+            .show-btn{
+                display: block;
+            }
+            #Menu{
+                position: fixed;
+                top: 0px;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                text-align: center;
+                background-color: black;
+                line-height: normal;
+                padding: 60px 0;
+                transition: .7s;
+            }
+            #check:checked ~ #Menu {
+                right: 0px;
+            }
+            #Menu li{
+                display: block;
+                padding: 20px 0;
+            }
+            #Menu li a{
+                display: block;
+            }
+            .hide-btn {
+                display: block;
+                position: absolute;
+                right:20px;
+                top: 10px;
+            }
+            #Banner{
+                margin-top: 60px;
+                height: 400px;
+                background-color: rgb(33, 186, 206);
+                background-image: url("../Images/emile-perron-xrVDYZRGdw4-unsplash.jpg");
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                display: flex;
+            }
+            #Banner h2{
+                color: white;
+                margin: 20px;
+            }
+
+
+            #Section-1{
+                margin: 35px 0px;
+                width: 100%;
+            }
+            .member{
+                height: 250px;
+                background-color: rgb(182, 182, 33);
+                border-radius: 100%;
+                width: 40%;
+                float: left;
+                margin: 0px 5%;
+                margin-bottom: 15px;
+            }
+            #member::after{
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+
+            #Section-2{
+                margin: 10px 0px;
+            }
+            #content{
+                margin-bottom: 5px;
+            }
+            #MainContent{
+                width: 100%;
+                height: 500px;
+                background-color: rgb(56, 55, 55) ;
+                color:white;
+                padding: 0 2% 0 2%;
+                text-align: justify;
+                overflow: hidden;
+            }
+            #Article{
+                width: 100%;
+                height: 600px;
+                padding: 0% 0.5% 1% 0.5%;
+            }
+            .Article{
+                height: 194px;
+                background-color: rgba(214, 89, 6, 0.842);
+                color: white;
+            }
+            .Article p{
+                color: black;
+                text-align: center;
+                padding: 0px;
+                margin: 0px;
+                font-weight: bold;
+                margin-top: 1px;
+            }
+            #content::after{
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+
+            #Section-3{
+                margin: 30px 0px;
+            }
+        .Box{
+            width: 40%;
+            color: black;
+            float: left;
+            background-color: lightgrey;
+            margin: 0px 5%;
+            margin-bottom: 15px;
+        }
+        .Box img {
+            width: 95%;
+            height: 25vh;
+            margin: 2.5%;
+        }
+        .Box p{
+            font-size: 20px;
+            text-align: justify;
+            margin: 5px;
+            line-height: 24px;
+        }
+        .Box a {
+            color: white;
+            display: block;
+            font-size: 20px;
+            background-color: red;
+            text-align: center;
+            text-decoration: none;
+        }
+        #Box::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+
+        #Footer {
+            background-color: violet;
+            padding: 5px;
+            color: white;
+        }
+        }
+        @media (max-width: 625px) {
+            .container{
+                min-width:320px;
+            }
+            html{
+                scroll-padding-top: 55px;
+                scroll-behavior: smooth;
+            }
+            #Header{
+                width: 100%;
+                height: 50px;
+                background-color: lightgray;
+                padding: 0px 20px;
+                position: fixed;
+                top: 0px;
+                right: 0px;
+                min-width: 320px;
+            }
+            .show-btn{
+                display: block;
+            }
+            #Menu{
+                position: fixed;
+                top: 0px;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                text-align: center;
+                background-color: black;
+                line-height: normal;
+                padding: 60px 0;
+                transition: .7s;
+            }
+            #check:checked ~ #Menu {
+                right: 0;
+            }
+            #Menu li{
+                display: block;
+                padding: 20px 0;
+            }
+            #Menu li a{
+                display: block;
+            }
+            .hide-btn {
+                display: block;
+                position: absolute;
+                right:20px;
+                top: 10px;
+            }
+            #Banner{
+                margin-top: 60px;
+                height: 400px;
+                background-color: rgb(33, 186, 206);
+                background-image: url("../Images/emile-perron-xrVDYZRGdw4-unsplash.jpg");
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                display: flex;
+            }
+            #Banner h2{
+                color: white;
+                font-size: 20px;
+                margin: 20px;
+            }
+
+
+            #Section-1{
+                margin: 35px 0px;
+                width: 100%;
+            }
+            .member{
+                height: 250px;
+                background-color: rgb(182, 182, 33);
+                border-radius: 100%;
+                width: 80%;
+                margin-left: 10%;
+                margin-bottom: 15px;
+            }
+        #member::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+
+        #Section-2{
+            margin: 10px 0px;
+        }
+        #content{
+            margin-bottom: 5px;
+        }
+        #MainContent{
+            height: 600px;
+            width: 100%;
+            background-color: rgb(56, 55, 55) ;
+            color:white;
+            padding: 0 0.5% 0 0.5%;
+            overflow: hidden;
+            text-align: justify;
+        }
+        #Article{
+            width: 100%;
+            height: 600px;
+            float: left;
+            padding: 0% 0.5% 1% 0.5%;
+        }
+        .Article{
+            height: 194px;
+            background-color: rgba(214, 89, 6, 0.842);
+            color: white;
+        }
+        .Article p{
+            color: black;
+            text-align: center;
+            padding: 0px;
+            margin: 0px;
+            font-weight: bold;
+            margin-top: 1px;
+        }
+        #content::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+
+        #Section-3{
+            margin: 30px 0px;
+        }
+        .Box{
+            width: 80%;
+            color: black;
+            float: left;
+            background-color: lightgrey;
+            margin: 0px 10%;
+            margin-bottom: 15px;
+        }
+        .Box img {
+            width: 95%;
+            height: 25vh;
+            margin: 2.5%;
+        }
+        .Box p{
+            font-size: 26px;
+            text-align: justify;
+            margin: 5px;
+            line-height: 24px;
+        }
+        .Box a {
+            color: white;
+            font-size: 24px;
+            display: block;
+            background-color: red;
+            text-align: center;
+            text-decoration: none;
+        }
+        #Box::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+
+        #Footer {
+            background-color: violet;
+            padding: 5px;
+            color: white;
+        }
+        }
+    </style>
+</head>
+
+<body >
+    <div class="container">
+        <div id="Header">
+            <input type="checkbox" id="check">
+            <label for="check" class="show-btn">
+                <i class="fa fa-bars"></i>
+            </label>
+
+            <ul id=Menu>
+                <li><a href="#Banner">Home</a></li>
+                <li><a href="#Section-2">About Us</a></li>
+                <li><a href="#Section-1">Team</a></li>
+                <li><a href="#Section-3">Technologies</a></li>
+                <li><a href="#Section-4">Contact</a></li>
+                
+                <label for="check" class="hide-btn">
+                    <i class="fa fa-times"></i>
+                </label>
+            </ul>
+        </div>
+
+        <div id="Banner">
+            <h2>Practical-9<h2>
+        </div>
+
+        <div id="Section-1">
+            <h1 style="text-align: center;color: black;margin-bottom: 2px">Team Members</h1>
+            <div id="member">
+                <img class="member" src="../Images/1.png"></img>
+                <img class="member" src="../Images/2.png"></img>
+                <img class="member" src="../Images/3.png"></img>
+                <img class="member" src="../Images/9.png"></img>
+            </div>
+        </div>
+        
+        <div id="Section-2">
+            <h1 style="text-align: center;color: black;margin-bottom: 10px">About Us</h1>
+            <div id="content">
+                <div id="MainContent">
+                    <h2 style="margin: 5px 5px 10px 2px;">About Project</h2>
+                    <p style="margin-bottom: 10px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, itaque! Nihil eum fuga totam ut odit laborum exercitationem labore esse porro iure magni vel tenetur blanditiis perspiciatis dolor autem temporibus eos deserunt quaerat dolores ducimus, ipsam alias, qui molestias! Veniam laboriosam obcaecati nostrum Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, itaque! Nihil eum fuga totam ut odit laborum exercitationem labore esse porro iure magni vel tenetur blanditiis perspiciatis dolor autem temporibus eos deserunt quaerat dolores ducimus, ipsam alias, qui molestias! Veniam laboriosam obcaecati nostrum delectus tenetur soluta officia amet atque assumenda magni. Saepe numquam, ratione dolor id molestiae, quod alias asperiores facilis accusantium Est, itaque! Nihil eum fuga totam ut odit laborum exercitationem labore esse porro iure magni vel tenetur blanditiis perspiciatis dolor autem temporibus eos deserunt quaerat dolores ducimus, ipsam alias, qui molestias! Veniam laboriosam obcaecati nostrum delectus tenetur soluta officia amet atque assumenda magni. Saepe numquam, ratione dolor id molestiae, quod alias asperiores facilis accusantium reprehenderit tenetur doloribus vitae eveniet nih Est, itaque! Nihil eum fuga totam ut odit laborum exercitationem labore esse porro iure magni vel tenetur blanditiis perspiciatis dolor autem temporibus eos deserunt quaerat dolores ducimus, ipsam alias, qui molestias! Veniam laboriosam obcaecati nostrum delectus tenetur soluta officia amet atque assumenda magni. Saepe numquam, ratione dolor id molestiae, quod alias asperiores facilis accusantium Veniam laboriosam obcaecati nostrum delectus tenetur soluta officia amet atque assumenda magni. Saepe numquam, ratione dolor id molestiae, quod alias asperiores facilis accusantium reprehenderit tenetur doloribus vitae eveniet nih Est, itaque! Nihil eum fuga totam ut odit laborum exercitationem labore esse porro iure magni vel tenetur blanditiis perspiciatis dolor autem temporibus eos deserunt quaerat dolores ducimus, ipsam alias, qui molestias! Veniam laboriosam obcaecati nostrum delectus tenetur soluta officia amet atque assumenda magni. Saepe numquam, ratione dolor id molestiae, quod alias asperiores facilis accusantium tenetur doloribus vitae eveniet nih Est, itaque! Nihil eum fuga totam ut odit laborum exercitationem labore esse porro iure magni vel tenetur blanditiis perspiciatis dolor autem temporibus eos deserunt quaerat dolores ducimus, ipsam alias, qui molestias! Veniam laboriosam obcaecati nostrum delectus tenetur soluta officia amet atque assumenda magni. Saepe numqua.</p>
+                </div>
+                <div id=Article>
+                    <div class="Article" style="margin: 5px 0px;font-size: 24px;background: url(../Images/p1.jpg) no-repeat center;background-size: 95% 100%"><p>Project-1</p></div>
+                    <div class="Article" style="font-size: 24px;background: url(../Images/p2.jpeg) no-repeat center;background-size: 95% 100%"><p>Project-2</p></div>
+                    <div class="Article" style="margin: 5px 0px;font-size: 24px;background: url(../Images/p3.jpg) no-repeat center;background-size: 95% 100%;"><p>Project-3</p></div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="Section-3">
+            <h1 style="text-align: center;color: black;margin-bottom: 10px">Technologies Used</h1>
+            <div id="Box">
+                <div class="Box">
+                    <img src="../Images/Html_Introduction.png" alt="Html_Introduction">
+                    <b><p style="text-align: center;" >Introduction to HTML 5</p></b>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, illum dolorum! Cum, aliquam consequatur voluptatum ipsa quasi omnis unde corporis?</p>
+                    <a href="Html_Introduction.html" target="_blank">Read More</a>
+                </div>
+                <div class="Box">
+                    <img src="../Images/Css_Introduction.jpg" alt="Css_Introduction">
+                    <b><p style="text-align: center;" >Introduction to CSS 3</p></b>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, illum dolorum! Cum, aliquam consequatur voluptatum ipsa quasi omnis unde corporis?</p>
+                    <a href="Css_Introduction.html" target="_blank">Read More</a>
+                </div>
+                <div class="Box">
+                    <img src="../Images/JavaScript_Introductionl.png" alt="JavaScript_Introduction">
+                    <b><p style="text-align: center;font-size: 14px;" >Introduction to JAVASCRIPT</p></b>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, illum dolorum! Cum, aliquam consequatur voluptatum ipsa quasi omnis unde corporis?</p>
+                    <a href="JavaScript_Introduction.html" target="_blank">Read More</a>
+                </div>
+                <div class="Box">
+                    <img src="../Images/Bootstrap_Introduction.jpg" alt="Html_Introduction">
+                    <b><p style="text-align: center;font-size: 13px;" >Introduction to BOOTSTRAP</p></b>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.Assumenda, illum dolorum! Cum, aliquam consequatur voluptatum ipsa quasi omnis unde corporis?</p>
+                    <a href="Bootstrap_Introduction.html" target="_blank">Read More</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="Section-4">
+            <h1 style="text-align: center;color: black;margin-bottom: 2px">Contact</h1>
+            <div id="Footer">
+                <p style="text-align: center;font-size: 24px;">Website template for Practical 8 &copy <a href="https://www.beta-labs.in/" target="_blank">BetaLabs</a></p>
+                <p style="text-align: center;font-size: 24px;"> <a href="#">Back to top</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
