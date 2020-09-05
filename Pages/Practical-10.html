@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical-10</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #Header {
+            width: 100%;
+            height: 60px;
+            background-color: #353b48;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #Header img{
+            width: 60px;
+            height: 60px;
+            opacity: 0.3;
+            margin: 15px;
+            transition: 1s;
+        }
+        #Header img:hover{
+            opacity: 1;
+        }
+        #Header h1{
+            color: white;
+            line-height: 60px;
+            text-transform: uppercase;
+        }
+
+        #Content{
+            width: 100%;
+            margin-top: 60px;
+            padding: 20px;
+            transition: 0.7s;
+            float: right;           
+        }
+        #Content img{
+            width: 70%;
+            display: block;
+            margin: auto;
+            margin-bottom: 15px;
+        }
+        #Content p{
+            text-align: justify;
+        }
+
+        .showBtn, .hideBtn, #check{
+            font-size: 30px;
+            position: fixed;
+            top: 15px;
+            left: 30px;
+            color: white;
+            transition: 0.5s;
+        }
+        #check{
+            display: none;
+        }
+        .hideBtn{
+            opacity: 0;
+        }
+        #check:checked~ #SideBar{
+            left: 0;
+        }
+        #check:checked~ .hideBtn{
+            opacity: 1;
+        }
+        #check:checked~ .showBtn{
+            opacity: 0;
+        }
+        #check:checked~ #Content{
+            width: 80%;
+        }
+
+        #SideBar{
+            width: 20%;
+            height: 100%;
+            background-color: #353b48;
+            position: fixed;
+            top: 60px;
+            left: -100%;
+            transition: 0.5s;
+        }
+        #SideBar ul{
+            list-style: none;
+        }
+        #SideBar ul li{
+            border-bottom: solid 2px rgba(255, 255, 255, 0.2);
+        }
+        #SideBar ul li a{
+            display: block;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            padding: 10px;
+            transition: .4s;
+        }
+        #SideBar ul li a i{
+            padding-right: 15px;
+        }
+        #SideBar ul li a:hover{
+            border-left: 10px solid white;
+        }
+        #SideBar .SocialLinks{
+            width: 100%;
+            color: white;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            font-size: 30px;
+            border-bottom: solid 2px rgba(255, 255, 255, 0.2);
+            margin-top: 150px;
+        }
+        #SideBar .SocialLinks a{
+            text-decoration:none;
+            color: white;
+        }
+
+        @media (max-width: 700px){
+            #SideBar{
+                width: 100%;
+                text-align: center;
+            }
+            #Header h1{
+                display: none;
+            }
+            #Header img{
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="Header">
+        <img src="../Images/practical-icon-156355229.jpg" alt="Practical Icon">
+        <h1>Practical-10</h1>
+    </div>
+
+    <input type="checkbox" id="check">
+    <label for="check" class="showBtn">
+        <i class="fa fa-bars"></i>
+    </label>
+    <label for="check" class="hideBtn">
+        <i class="fa fa-times"></i>
+    </label>
+
+    <div id="Content">
+        <img src="../Images/emile-perron-xrVDYZRGdw4-unsplash.jpg" alt="An Image">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat repellendus nemo aliquam incidunt quisquam ipsa deserunt soluta laudantium maiores dolores quas voluptate dicta ea commodi animi quo, quos molestias perferendis nihil temporibus deleniti similique ratione tempore ipsam! Aliquam, natus neque amet perferendis laborum, autem molestiae tempore hic repellendus adipisci exercitationem dolor nihil, dolore dicta! Enim doloremque ratione sunt qui ipsa incidunt excepturi dolore possimus, quia, quidem soluta accusamus sit, reiciendis cupiditate. Autem nihil nulla provident totam reiciendis, quo fuga. Ex ea maiores quo atque possimus illo facilis ipsum ipsa repellat, maxime tempore explicabo cumque excepturi eos distinctio voluptatibus. Recusandae, quae quod? Atque, porro illo. Illum sit fugit impedit officia praesentium quisquam odit repudiandae repellendus necessitatibus doloribus, quam, aliquam nesciunt earum quibusdam, commodi labore non accusamus tempora explicabo delectus cumque. Reiciendis cumque, optio soluta perferendis sequi deserunt porro sunt, magni nemo itaque doloribus quis numquam voluptas esse, voluptatum dicta asperiores provident praesentium officia neque dolorum. Accusantium ratione dolor adipisci veniam eligendi sint illum autem vero aperiam sunt culpa quae temporibus asperiores expedita dicta eum aliquam iste, placeat corrupti ipsam officia perspiciatis enim molestiae! Ex minima laudantium nihil porro cumque iure soluta expedita labore ut? Corporis, saepe. Quisquam sit non consequatur eveniet repudiandae amet excepturi eius minima dicta vero recusandae, hic nostrum inventore. Fugit magnam alias, vero velit reiciendis nihil quo porro odio maxime incidunt voluptate sequi laboriosam fugiat earum suscipit, cupiditate blanditiis, exercitationem libero ea rem. Corrupti praesentium beatae veniam veritatis tempora error culpa odio, maxime aut atque voluptatibus quae laudantium non? Sed blanditiis debitis quidem fuga aliquid. Quas doloremque obcaecati consequatur illo illum, provident quod deleniti vel impedit sint unde recusandae exercitationem a, perspiciatis harum rem facere. Quia eveniet non est neque autem mollitia? Quaerat laborum rerum, magni id rem ratione velit expedita placeat vero totam dolores dignissimos dolore nisi cumque officiis maxime distinctio. Libero tenetur sequi ducimus ea corrupti totam ut sunt pariatur nesciunt quisquam, deserunt cumque quam? Fugit numquam dolore magni dolorum tempore, deserunt impedit quaerat, voluptatibus perferendis iure illo neque rerum ipsa, nulla consequuntur velit quam accusantium eos ipsum tenetur mollitia maxime alias esse sapiente! Quis, quasi? Maxime repudiandae dolorum consectetur quas possimus voluptate commodi sed perspiciatis iure quibusdam tempore explicabo nemo in voluptas soluta fuga similique odit, omnis iusto sapiente? Hic reprehenderit ullam numquam nesciunt repellat voluptas obcaecati provident, quod ducimus corrupti quibusdam quisquam sint. Et error deleniti quis assumenda nesciunt quia. Perspiciatis eaque, molestias dolorem labore vitae facere asperiores debitis sed aspernatur! Ab neque minima velit tenetur delectus dolores maxime numquam distinctio tempore, quidem amet architecto facere, obcaecati adipisci optio, accusantium vitae possimus eligendi officiis nostrum dignissimos quasi voluptates? Vitae, voluptas error. Culpa, consequuntur? A hic dolorum quae eos officia eius dicta molestiae veritatis. Doloribus blanditiis aliquam neque, sunt delectus natus tenetur laudantium ducimus magni porro! Ipsa odit corrupti accusamus, doloribus totam harum ipsam autem culpa asperiores! Consequatur eos deleniti, non quia voluptatibus molestiae error praesentium esse perferendis, necessitatibus itaque commodi, iure modi incidunt quibusdam atque? Distinctio, suscipit doloribus perferendis aut iusto architecto atque quaerat.
+        </p>
+    </div>
+
+    <div id="SideBar">
+        <ul>
+            <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+            <li><a href="#"><i class="fa fa-user"></i>About</a></li>
+            <li><a href="#"><i class="fa fa-tasks"></i>Services</a></li>
+            <li><a href="#"><i class="fa fa-rss"></i>Blog</a></li>
+            <li><a href="#"><i class="fa fa-id-card"></i>Contact</a></li>
+        </ul>
+        <div class="SocialLinks">
+            <a href="#"><i class="fa fa-facebook-square"></i></a>
+            <a href="#"><i class="fa fa-youtube-square"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+        </div>
+    </div>
+</body>
+</html>
