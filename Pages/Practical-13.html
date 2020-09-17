@@ -5,652 +5,647 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practical 13</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *{
+        padding: 0%;
+        margin: 0%;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #MainContent{
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        color: grey;
+    }
+
+    #MainContent h1{
+        animation-name:moveToLeft;
+        animation-duration: 2s;
+    }
+
+    footer
+    {
+        background-color: #26272b;  
+    }
+
+    #Section-1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding:10px;
+    }
+    #About{
+        width: 40%;
+        line-height: 24px;
+        margin-bottom: 5%;
+    }
+    #About h2{   
+        text-transform: uppercase;
+        color: lightgrey;
+    }
+    #About p{
+        text-align: justify;
+        color:lightgray;
+        line-height: 24px;
+    }
+
+    #Section-1 h2{  
+        font-size: 18px; 
+        text-transform: uppercase;
+        color: lightgrey;
+        line-height: 24px;
+        margin: 10px;
+    }
+
+    #Section-1 ul{
+        list-style: none;
+    }
+
+    a{
+        text-decoration: none;
+        color: lightgray;
+        line-height: 24px;
+    }
+
+    #Section-1 a:hover
+    {
+        color: orangered;
+    }
+    #Section-1 i{
+        padding-right: 15px;
+        color: lightgray;
+        margin-right: 10px;
+        line-height: 24px;
+    }
+    #Section-1 span{
+        color: lightgray;
+        line-height: 24px;
+    }
+
+    #Section-2
+    {
+        display: flex;
+        padding:25px;
+        justify-content: center;
+        align-items: center;
+        color: lightgray;
+    }
+
+    #Section-2 a{
+        margin:0px 15px;
+        text-decoration: none;
+        border-radius: 50px;
+        padding: 10px 40px;
+        background-color: red;
+        color: white;
+        animation-name:moveToLeft;
+        animation-duration: 2s;
+    }
+    #Section-2 h2{
+        animation-name:moveToRight;
+        animation-duration: 2s;
+    }
+    #Section-2 a:hover{
+        background-color: #ffff00;
+        color: black;
+    }
+
+    #Section-3{
+        display: flex;
+        justify-content: center;
+    }
+
+    #Section-3 ul{
+        list-style: none;
+        margin: 20px;
+    }
+
+    #Section-3 ul li{
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        padding: 20px;
+        background-color:#424242;
+        border-radius: 50%;
+        margin-right: 20px;
+    }
+
+    #Section-3 ul li i{
+        color: white;
+        font-size: 24px;
+        line-height: 24px;
+        text-align: center;
+    }
+
+    #Section-3 ul li:nth-child(1):hover{
+        background-color: #3d5afe;
+    }
+
+    #Section-3 ul li:nth-child(2):hover{
+        background-color: #29b6f6;
+    }
+
+    #Section-3 ul li:nth-child(3):hover{
+        background-color: #ffff00;
+    }
+
+    #Section-3 ul li:nth-child(4):hover{
+        background-color: #c4001d;
+    }
+    #Section-3 ul li:nth-child(5):hover{
+        background-color: #f50057;
+    }
+
+    #Section-4 {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        padding:20px 15px;
+    }
+
+    #Section-4 p{
+        color: lightgrey;
+        position: relative;
+    }
+    #Section-4 p::after{
+        content: '';
+        display: block;
+        width: 0%;
+        height: 2px;
+        position: absolute;
+        bottom: -10px;
+        right: 0;
+        background-color: yellow;
+        transition: all 0.3s;
+    }
+    #Section-4 p:hover::after{
+        width: 100%;
+    }
+    hr{
+        opacity: 0.3;
+    }
+
+
+    @media (max-width:767px){
+        #MainContent{
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        color: grey;
+    }
+
+    #MainContent h1{
+        animation-name:moveToLeft;
+        animation-duration: 2s;
+    }
+
+    footer
+    {
+        background-color: #26272b;  
+    }
+
+    #Section-1 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding:10px;
+    }
+    #About{
+        width: 100%;
+        line-height: 24px;
+        margin-bottom: 20px;
+    }
+    #About h2{   
+        text-transform: uppercase;
+        color: lightgrey;
+    }
+    #About p{
+        text-align: justify;
+        color:lightgray;
+        line-height: 24px;
+    }
+
+    #Section-1 h2{  
+        font-size: 18px; 
+        text-transform: uppercase;
+        color: lightgrey;
+        line-height: 24px;
+        margin: 10px;
+    }
+
+    #Section-1 ul{
+        list-style: none;
+    }
+
+    a{
+        text-decoration: none;
+        color: lightgray;
+        line-height: 24px;
+    }
+
+    #Section-1 a:hover
+    {
+        color: orangered;
+    }
+    #Section-1 i{
+        padding-right: 15px;
+        color: lightgray;
+        margin-right: 10px;
+        line-height: 24px;
+    }
+    #Section-1 span{
+        color: lightgray;
+        line-height: 24px;
+    }
+
+    #Section-2
+    {
+        display: flex;
+        padding:25px;
+        justify-content: center;
+        align-items: center;
+        color: lightgray;
+    }
+
+    #Section-2 a{
+        margin:0px 15px;
+        text-decoration: none;
+        border-radius: 50px;
+        padding: 10px 40px;
+        background-color: red;
+        color: white;
+        animation-name:moveToLeft;
+        animation-duration: 2s;
+    }
+    #Section-2 h2{
+        animation-name:moveToRight;
+        animation-duration: 2s;
+    }
+    #Section-2 a:hover{
+        background-color: #ffff00;
+        color: black;
+    }
+
+    #Section-3{
+        display: flex;
+        justify-content: center;
+    }
+
+    #Section-3 ul{
+        list-style: none;
+        margin: 20px;
+    }
+
+    #Section-3 ul li{
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        padding: 20px;
+        background-color:#424242;
+        border-radius: 50%;
+        margin-right: 20px;
+    }
+
+    #Section-3 ul li i{
+        color: white;
+        font-size: 24px;
+        line-height: 24px;
+        text-align: center;
+    }
+
+    #Section-3 ul li:nth-child(1):hover{
+        background-color: #3d5afe;
+    }
+
+    #Section-3 ul li:nth-child(2):hover{
+        background-color: #29b6f6;
+    }
+
+    #Section-3 ul li:nth-child(3):hover{
+        background-color: #ffff00;
+    }
+
+    #Section-3 ul li:nth-child(4):hover{
+        background-color: #c4001d;
+    }
+    #Section-3 ul li:nth-child(5):hover{
+        background-color: #f50057;
+    }
+
+    #Section-4 {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        padding:20px 15px;
+    }
+
+    #Section-4 p{
+        color: lightgrey;
+        position: relative;
+    }
+    #Section-4 p::after{
+        content: '';
+        display: block;
+        width: 0%;
+        height: 2px;
+        position: absolute;
+        bottom: -10px;
+        right: 0;
+        background-color: yellow;
+        transition: all 0.3s;
+    }
+    #Section-4 p:hover::after{
+        width: 100%;
+    }
+    hr{
+        opacity: 0.3;
+    }
+
+    @media(max-width:499px){
+    #MainContent{
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 40px;
+        color: grey;
+    }
+
+    #MainContent h1{
+        animation-name:moveToLeft;
+        animation-duration: 2s;
+    }
+
+    footer
+    {
+        background-color: #26272b;  
+    }
+
+    #Section-1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding:10px;
+        margin-top: 10px;
+    }
+    #About{
+        width: 100%;
+        line-height: 24px;
+        margin-bottom: 10px;
+    }
+    #About h2{   
+        text-transform: uppercase;
+        color: lightgrey;
+    }
+    #About p{
+        text-align: justify;
+        color:lightgray;
+        line-height: 24px;
+    }
+
+    #Section-1 h2{  
+        font-size: 18px; 
+        text-transform: uppercase;
+        color: lightgrey;
+        line-height: 24px;
+        margin: 10px;
+    }
+
+    #Section-1 ul{
+        list-style: none;
+    }
+
+    a{
+        text-decoration: none;
+        color: lightgray;
+        line-height: 24px;
+        margin-left: 10px;
+    }
+
+    #Section-1 a:hover
+    {
+        color: orangered;
+    }
+    #Section-1 i{
+        color: lightgray;
+        line-height: 24px;
+    }
+    #Section-1 span{
+        color: lightgray;
+        line-height: 24px;
+    }
+
+    #Section-2
+    {
+        display: flex;
+        padding:15px;
+        justify-content: center;
+        align-items: center;
+        color: lightgray;
+    }
+
+    #Section-2 a{
+        margin:0px 15px;
+        text-decoration: none;
+        border-radius: 50px;
+        padding: 10px 40px;
+        background-color: red;
+        color: white;
+        font-size: 20px;
+        animation-name:moveToLeft;
+        animation-duration: 2s;
+    }
+    #Section-2 h2{
+        animation-name:moveToRight;
+        animation-duration: 2s;
+    }
+    #Section-2 a:hover{
+        background-color: #ffff00;
+        color: black;
+    }
+
+    #Section-3{
+        display: flex;
+        justify-content: center;
+    }
+
+    #Section-3 ul{
+        list-style: none;
+        margin: 20px;
+    }
+
+    #Section-3 ul li{
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        padding: 20px;
+        background-color:#424242;
+        border-radius: 50%;
+        margin-right: 20px;
+    }
+
+    #Section-3 ul li i{
+        color: white;
+        font-size: 24px;
+        line-height: 24px;
+        text-align: center;
+    }
+
+    #Section-3 ul li:nth-child(1):hover{
+        background-color: #3d5afe;
+    }
+
+    #Section-3 ul li:nth-child(2):hover{
+        background-color: #29b6f6;
+    }
+
+    #Section-3 ul li:nth-child(3):hover{
+        background-color: #ffff00;
+    }
+
+    #Section-3 ul li:nth-child(4):hover{
+        background-color: #c4001d;
+    }
+    #Section-3 ul li:nth-child(5):hover{
+        background-color: #f50057;
+    }
+
+    #Section-4 {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        padding:20px 15px;
+    }
+
+    #Section-4 p{
+        color: lightgrey;
+        position: relative;
+    }
+    #Section-4 p::after{
+        content: '';
+        display: block;
+        width: 0%;
+        height: 2px;
+        position: absolute;
+        bottom: -10px;
+        right: 0;
+        background-color: yellow;
+        transition: all 0.3s;
+    }
+    #Section-4 p:hover::after{
+        width: 100%;
+    }
+    hr{
+        opacity: 0.3;
+    }
+
+    @keyframes moveToLeft
+    {
+        0%{
+            transform: translateX(120px);
+            opacity: 0;
+        }
+        100%
+        {
+            transform: translateX(0px);
+            opacity: 1;
+        }
+    }
+
+    @keyframes moveToRight
+    {
+        0%{
+            transform: translateX(-120px);
+            opacity: 0;
+        }
+        100%
+        {
+            transform: translateX(0px);
+            opacity: 1;
+        }
+    }
+    </style>
 </head>
-<style>
-    *{
-    padding: 0%;
-    margin: 0%;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.main-content
-{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 40px;
-    color: rgb(82, 200, 255);
-    
-}
-
-.main-content h1{
-    animation-name:moveToLeft;
-    animation-duration: 2s;
-}
-
-footer
-{
-    width: 100%;
-    background-image: linear-gradient(to right, rgba(223, 123, 248, 0.829) , rgb(168, 62, 62));;
-    
-}
-.sec1 {
-    
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding:2px;
-}
-
-.about
-{
-    width: 40%;
-    line-height: 30px;
-    margin-bottom: 5%;
-}
-.about h2
-{   text-transform: uppercase;
-    color: #6d6d6d;
-}
-
-.about p
-{
-    text-align: justify;
-    color:lightgray
-}
-
-.sec1 h2
-{   text-transform: uppercase;
-    color: #6d6d6d;
-}
-
-
-.sec1 ul{
-    list-style: none;
-}
-
-a{
-    text-decoration: none;
-    color: lightgray;
-    line-height: 30px;
-}
-
-.sec1 a:hover
-{
-    color: rgb(0, 255, 85);
-}
-.sec1 i{
-    line-height: 30px;
-    padding-right: 15px;
-    color: lightgray;
-}
-.sec1 span{
-    line-height: 30px;
-    color: lightgray;
-}
-
-.sec2
-{
-    display: flex;
-    padding:25px;
-    justify-content: center;
-    align-items: center;
-    color: lightgray;
-}
-
-.sec2 a
-{
-    margin:0px 15px;
-    text-decoration: none;
-    border-radius: 50px;
-    padding: 10px 40px;
-    background-color: rgb(0, 0, 0);
-    color: white;
-    animation-name:moveToLeft;
-    animation-duration: 2s;
-}
-.sec2 h2{
-    animation-name:moveToRight;
-    animation-duration: 2s;
-}
-.sec2 a:hover
-{
-    background-color: #ffff00;
-    color: black;
-}
-
-.sec3
-{
-    display: flex;
-    justify-content: center;
-}
-
-.sec3 ul
-{
-   list-style: none;
-   margin: 20px;
-}
-
-.sec3 ul li
-{
-    display: inline-block;
-    width: 60px;
-    height: 60px;
-    padding: 20px;
-    background-color:#6d6d6d;
-    border-radius: 50%;
-    margin-right: 20px;
-}
-
-.sec3 ul li i
-{
-    color: white;
-    font-size: 24px;
-    line-height: 24px;
-    text-align: center;
-    
-}
-
-.sec3 ul li:nth-child(1):hover
-{
-    background-color: #3d5afe;
-    
-}
-
-.sec3 ul li:nth-child(2):hover
-{
-    background-color: #29b6f6;
-}
-
-.sec3 ul li:nth-child(3):hover
-{
-    background-color: #ffff00;
-}
-
-.sec3 ul li:nth-child(4):hover
-{
-    background-color: #c4001d;
-}
-.sec3 ul li:nth-child(5):hover
-{
-    background-color: #f50057;
-}
-
-.sec4 
-{
-
-    background-color: black;
-   display: flex;
-   justify-content: center;
-   padding:20px 15px;
-   
-}
-
-.sec4 p
-{
-    color: lightgrey;
-}
-
-.sec4 p a{
-    color: #29b6f6;
-}
-
-
-
-@media (max-width:767px)
-{
-    .main-content
-{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 40px;
-    color: gray;
-}
-
-footer
-{
-    width: 100%;
-   background-color:#1b1b1b;
-    
-}
-.sec1 {
-    
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding:2px;
-}
-
-.about
-{
-    width: 100%;
-    line-height: 30px;
-}
-.about h2
-{   text-transform: uppercase;
-    color: #000000;
-}
-
-.about p
-{
-    text-align: justify;
-    color:lightgray
-}
-
-.sec1 h2
-{   text-transform: uppercase;
-    color: #000000;
-}
-
-
-.sec1 ul{
-    list-style: none;
-}
-
- a{
-    text-decoration: none;
-    color: lightgray;
-    line-height: 30px;
-}
-
-.sec1 a:hover
-{
-    color: red;
-}
-.sec1 i{
-    line-height: 30px;
-    padding-right: 15px;
-    color: lightgray;
-}
-.sec1 span{
-    line-height: 30px;
-    color: lightgray;
-}
-
-.sec2
-{
-    display: flex;
-    padding:25px;
-    justify-content: center;
-    align-items: center;
-    color: lightgray;
-}
-
-.sec2 a
-{
-    margin:0px 15px;
-    text-decoration: none;
-    border-radius: 50px;
-    padding: 10px 40px;
-    background-color: red;
-    color: white;
-}
-
-.sec2 a:hover
-{
-    background-color: #ffff00;
-    color: black;
-}
-
-.sec3
-{
-    display: flex;
-    justify-content: center;
-}
-
-.sec3 ul
-{
-   list-style: none;
-   margin: 20px;
-}
-
-.sec3 ul li
-{
-    display: inline-block;
-    width: 60px;
-    height: 60px;
-    padding: 20px;
-    background-color:#6d6d6d;
-    border-radius: 50%;
-    margin-right: 20px;
-}
-
-.sec3 ul li i
-{
-    color: white;
-    font-size: 24px;
-    line-height: 24px;
-    text-align: center;
-    
-}
-
-.sec3 ul li:nth-child(1):hover
-{
-    background-color: #3d5afe;
-    
-}
-
-.sec3 ul li:nth-child(2):hover
-{
-    background-color: #29b6f6;
-}
-
-.sec3 ul li:nth-child(3):hover
-{
-    background-color: #ffff00;
-}
-
-.sec3 ul li:nth-child(4):hover
-{
-    background-color: #c4001d;
-}
-.sec3 ul li:nth-child(5):hover
-{
-    background-color: #f50057;
-}
-
-.sec4 
-{
-
-    background-color: black;
-   display: flex;
-   justify-content: center;
-   padding:20px 15px;
-   
-}
-
-.sec4 p
-{
-    color: lightgrey;
-}
-
-.sec4 p a{
-    color: #29b6f6;
-}
-}
-
-@media(max-width:499px)
-{
-    .main-content
-{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 40px;
-    color: gray;
-}
-
-footer
-{
-    width: 100%;
-   background-color:#1b1b1b;
-    
-}
-.sec1 {
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding:2px;
-}
-
-.about
-{
-    width: 100%;
-    line-height: 30px;
-}
-.about h2
-{   text-transform: uppercase;
-    color: #000000;
-}
-
-.about p
-{
-    text-align: justify;
-    color:lightgray
-}
-
-.sec1 h2
-{   text-transform: uppercase;
-    color: #6d6d6d;
-    margin-top: 20px;
-}
-
-
-.sec1 ul{
-    list-style: none;
-}
-
- a{
-    text-decoration: none;
-    color: lightgray;
-    line-height: 30px;
-}
-
-.sec1 a:hover
-{
-    color: red;
-}
-.sec1 i{
-    line-height: 30px;
-    padding-right: 15px;
-    color: lightgray;
-}
-.sec1 span{
-    line-height: 30px;
-    color: lightgray;
-}
-
-.sec2
-{
-    display: flex;
-    padding:25px;
-    justify-content: center;
-    align-items: center;
-    color: lightgray;
-}
-
-.sec2 a
-{
-    margin:0px 15px;
-    text-decoration: none;
-    border-radius: 50px;
-    padding: 10px 40px;
-    background-color: red;
-    color: white;
-}
-
-.sec2 a:hover
-{
-    background-color: #ffff00;
-    color: black;
-}
-
-.sec3
-{
-    display: flex;
-    justify-content: center;
-}
-
-.sec3 ul
-{
-   list-style: none;
-   margin: 20px;
-}
-
-.sec3 ul li
-{
-    display: inline-block;
-    width: 60px;
-    height: 60px;
-    padding: 20px;
-    background-color:#6d6d6d;
-    border-radius: 50%;
-    margin-right:5px;
-}
-
-.sec3 ul li i
-{
-    color: white;
-    font-size: 24px;
-    line-height: 24px;
-    text-align: center;
-    
-}
-
-.sec3 ul li:nth-child(1):hover
-{
-    background-color: #3d5afe;
-    
-}
-
-.sec3 ul li:nth-child(2):hover
-{
-    background-color: #29b6f6;
-}
-
-.sec3 ul li:nth-child(3):hover
-{
-    background-color: #ff0000;
-}
-
-.sec3 ul li:nth-child(4):hover
-{
-    background-color: #000000;
-}
-.sec3 ul li:nth-child(5):hover
-{
-    background-color: #e63b2f;
-}
-
-.sec4 
-{
-
-    background-color: black;
-   display: flex;
-   justify-content: center;
-   padding:20px 15px;
-   
-}
-
-.sec4 p
-{
-    color: lightgrey;
-}
-
-.sec4 p a{
-    color: #29b6f6;
-}
-}
-
-@keyframes moveToLeft
-{
-    0%{
-        transform: translateX(120px);
-        opacity: 0;
-    }
-    100%
-    {
-        transform: translateX(0px);
-        opacity: 1;
-    }
-}
-
-@keyframes moveToRight
-{
-    0%{
-        transform: translateX(-120px);
-        opacity: 0;
-    }
-    100%
-    {
-        transform: translateX(0px);
-        opacity: 1;
-    }
-}
-</style>
 
 <body>
 
-    <section class="main-content">
+    <section id="MainContent">
         <h1>CONTENT AREA</h1>
     </section>
     <footer>
-     <section class="sec1">
-         <section class="about">
-             <h2>About Us</h2>
-             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur veritatis inventore veniam ipsum labore repellat saepe quidem. Impedit repellendus, distinctio aliquam molestias doloremque nesciunt, ullam aliquid dolor natus numquam asperiores saepe. Eius non officia veritatis eum, eaque odio? Autem iure repellat quia voluptas laboriosam rerum placeat ipsam impedit perferendis consequuntur?</p>
-         </section>
-         <section class="categories">
-             <h2>Categories</h2>
-             <ul>
-                    <li> <a href="#">C</a></li>
-                     <li><a href="#">UI Design</a></li>
-                     <li><a href="#">PHP</a></li>
-                     <li><a href="#">Java</a></li>
-                     <li><a href="#">Android</a></li>
-                     <li><a href="#">Hybrid Apps</a></li>
-             </ul>
-         </section>
-         <section class="quicklinks">
-             <h2>Quick Links</h2>
-             <ul>
-                 
-                     <li><a href="#">About Us</a></li>
-                     <li><a href="#">Contact Us</a></li>
-                     <li><a href="#">Contribute</a></li>
-                     <li><a href="#">Java</a></li>
-                     <li><a href="#">Privacy Policy</a></li>
-                     <li><a href="#">Sitemap</a></li>
-                 
-             </ul>
-         </section>
+        <section id="Section-1">
+            <section id="About">
+                <h2>About Us</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur veritatis inventore veniam ipsum labore repellat saepe quidem. Impedit repellendus, distinctio aliquam molestias doloremque nesciunt, ullam aliquid dolor natus numquam asperiores saepe. Eius non officia veritatis eum, eaque odio? Autem iure repellat quia voluptas laboriosam rerum placeat ipsam impedit perferendis consequuntur?</p>
+            </section>
+            <section id="Categories">
+                <h2>Categories</h2>
+                <ul>
+                        <li> <a href="#">C</a></li>
+                        <li><a href="#">UI Design</a></li>
+                        <li><a href="#">PHP</a></li>
+                        <li><a href="#">Java</a></li>
+                        <li><a href="#">Android</a></li>
+                        <li><a href="#">Hybrid Apps</a></li>
+                </ul>
+            </section>
+            <section id="Quicklinks">
+                <h2>Quick Links</h2>
+                <ul>
+                    
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Contribute</a></li>
+                        <li><a href="#">Java</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    
+                </ul>
+            </section>
 
-         <section class="contact">
-             <h2>Contact</h2>
-             <ul>
-                   <li> <i class="fa fa-home"></i><span>India</span></li>
-                   <li> <i class="fa fa-envelope"></i><span>md.rashid_cs18@gla.ac.in</span></li>
-                    <li><i class="fa fa-phone-square"></i><span>Mobile-746xxxxxx</span></li>
+            <section id="Contact">
+                <h2>Contact</h2>
+                <ul>
+                    <li> <i class="fa fa-home"></i><span>India</span></li>
+                    <li> <i class="fa fa-envelope"></i><span>md.rashid_cs18@gla.ac.in</span></li>
+                    <li> <i class="fa fa-phone-square"></i><span>Mobile-746xxxxxx</span></li>
+                </ul>
+            </section>
+        </section>
 
-                 
-             </ul>
-         </section>
-     </section>
+        <hr noshade="">
 
-     <hr width="100%">
-     <section class="sec2">
-         <h2>Register For Free</h2>
-         <a href="#">Sign Up</a>
-     </section>
+        <section id="Section-2">
+            <h2>Register For Free</h2>
+            <a href="#">Sign Up</a>
+        </section>
 
-     <hr width="100%">
+        <hr noshade="">
 
-     <section class="sec3">
-         <ul>
-             <li><a href="#"><i class="fa fa-facebook"></i> </a></li>
-             <li><a href="#"><i class="fa fa-twitter"></i> </a></li>
-             <li><a href="#"><i class="fa fa-google"></i> </a></li>
-             <li><a href="#"><i class="fa fa-linkedin"></i> </a></li>
-             <li><a href="#"><i class="fa fa-instagram"></i> </a></li>
-         </ul>
-     </section>
-     <hr width="100%">
+        <section id="Section-3">
+            <ul>
+                <li><a href="#"><i class="fa fa-facebook"></i> </a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i> </a></li>
+                <li><a href="#"><i class="fa fa-google"></i> </a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i> </a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i> </a></li>
+            </ul>
+        </section>
 
-     <section class="sec4">
-         <p>
-             Copyright © 2020 All Right Reserved.
-         </p>
-     </section>
+        <section id="Section-4">
+            <p>
+                Copyright © 2020 All Right Reserved.
+            </p>
+        </section>
+
     </footer>
 </body>
+
 </html>
