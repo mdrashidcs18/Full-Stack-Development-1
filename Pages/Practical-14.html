@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical-14</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background-color: lightgrey;
+            display: flex;
+            flex-direction: column;
+        }
+        header h1{
+            text-transform: uppercase;
+            color: red;
+            text-align: center;
+            font-size: 70px;
+            margin-top: 20px;
+        }
+        #MainContainer{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        #Form-1{
+            width: 300px;
+            height: 350px;
+            margin-top: 50px;
+            background-color: #fff;
+            margin: 20px;
+        }
+        #Form-1 #Form-1-Header{
+            height: 100px;
+            background: linear-gradient(to right,orange,red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        #Form-1 #Form-1-Header h1{
+            color: white;
+            font-size: 20px;
+            padding: 10px 0;
+        }
+        #Form-1 #Form-1-Container{
+            padding: 20px;
+        }
+        #Form-1 #Form-1-Container p#p1{
+            font-size: 12px;
+            color: grey;
+            padding: 20px 0;
+            text-align: right;
+        }
+        #Form-1 #Form-1-Container p#p2{
+            display: inline-block;
+            font-size: 12px;
+        }
+        #Form-1 #Form-1-Container b{
+            color: black;
+        }
+        .Social i{
+            color: white;
+            font-size: 20px;
+            padding: 10px 10px;
+        }
+        input[type='email']{
+            outline: none;
+            border: none;
+            border-bottom: 1px solid grey;
+            padding: 10px 0;
+        }
+        input[type='password']{
+            outline: none;
+            border: none;
+            border-bottom: 1px solid grey;
+            padding: 10px 0;
+        }
+        input[type='submit']{
+            outline: none;
+            border: none;
+            border-radius: 20px;
+            background-color: grey;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 30px;
+        }
+
+
+        #Form-2{
+            width: 300px;
+            height: 350px;
+            margin-top: 50px;
+            background-color: #fff;
+            margin: 20px;
+        }
+        #Form-2 #Form-2-Header{
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        #Form-2 #Form-2-Header h1{
+            color: deeppink;
+            font-size: 20px;
+            padding: 10px 0;
+        }
+        #Form-2 #Form-2-Container{
+            padding: 20px;
+        }
+        #Form-2 #Form-2-Container p#p3{
+            font-size: 12px;
+            color: grey;
+            padding: 20px 0;
+            text-align: right;
+            display: inline-block;
+        }
+        #Form-2 #Form-2-Container p#p4{
+            display: inline-block;
+            font-size: 12px;
+            margin-left: 20px;
+        }
+        #Form-2 #Form-2-Container b{
+            color: #3498db;
+        }
+        #Form-2 #Form-2-Footer{
+            background-color: #778899;
+            height: 76px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .Social i{
+            color: white;
+            font-size: 20px;
+            padding: 10px 10px;
+        }
+        input[type='email']{
+            outline: none;
+            border: none;
+            border-bottom: 1px solid grey;
+            padding: 10px 0;
+        }
+        input[type='password']{
+            outline: none;
+            border: none;
+            border-bottom: 1px solid grey;
+            padding: 10px 0;
+        }
+        input[type='checkbox']{
+            margin: 20px 0;
+        }
+        #Form-2 #Form-2-Container input[type='submit']{
+            outline: none;
+            border: none;
+            border-radius: 20px;
+            background-color: deeppink;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 30px;
+        }
+
+
+        #Form-3{
+            width: 300px;
+            height: 350px;
+            margin-top: 50px;
+            background-color: #fff;
+            margin: 20px;
+        }
+        #Form-3 #Form-3-Header{
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        #Form-3 #Form-3-Header h1{
+            color: black;
+            font-size: 20px;
+            padding: 10px 0;
+        }
+        #Form-3 #Form-3-Container{
+            padding: 20px;
+        }
+        #Form-3 #Form-3-Container p#p1{
+            font-size: 12px;
+            color: grey;
+            padding: 20px 0;
+            text-align: right;
+        }
+        #Form-3 #Form-3-Container p#p5{
+            font-size: 12px;
+            color: grey;
+            padding: 10px 0;
+            text-align: center;
+        }
+        #Form-3 #Form-3-Container b{
+            color: black;
+        }
+        #Form-3 #Form-3-Footer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #Form-3 #Form-3-Footer .Social i{
+            text-align: center;
+            border-radius: 50%;
+            color: #3498db;
+            font-size: 20px;
+            width: 70px;
+            padding: 10px 10px;
+            box-shadow: 2px 2px 5px #3498db;
+            margin-top: -10px;
+        }
+        input[type='email']{
+            outline: none;
+            border: none;
+            border-bottom: 1px solid grey;
+            padding: 10px 0;
+        }
+        input[type='password']{
+            outline: none;
+            border: none;
+            border-bottom: 1px solid grey;
+            padding: 10px 0;
+        }
+        input[type='checkbox']{
+            margin: 20px 0;
+        }
+        #Form-3 #Form-3-Container input[type='submit']{
+            display: block;
+            width: 100%;
+            outline: none;
+            border: none;
+            border-radius: 20px;
+            background: linear-gradient(to right,skyblue,blue);
+            color: white;
+            padding: 10px 20px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Form Templates</h1>
+    </header>
+    <div id="MainContainer">
+        <div id="Form-1">
+            <div id="Form-1-Header">
+                <h1>Log In</h1>
+                <div class="Social">
+                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-google"></i>
+                </div>
+            </div>
+            <div id="Form-1-Container">
+                <div>
+                    <input type="email" name="email" id="email" placeholder="Enter Email">
+                </div>
+                <div>
+                    <input type="password" name="pwd" id="pwd" placeholder="Enter Password">
+                </div>
+                <p id="p1">Forgot <b>Password</b></p>
+                <input type="submit" value="LOG IN">
+                <p id="p2">Don't have a Account? <b>Sign Up</b></p>
+            </div>
+            <div id="Form-1-Footer"></div>
+        </div>
+
+        <div id="Form-2">
+            <div id="Form-2-Header">
+                <h1>Sign Up</h1>
+            </div>
+            <div id="Form-2-Container">
+                <div>
+                    <input type="email" name="email" id="email" placeholder="Enter Email">
+                </div>
+                <div>
+                    <input type="password" name="pwd" id="pwd" placeholder="Enter Password">
+                </div>
+                <input type="checkbox" name="check" id="check">
+                <p id="p3">Accept the <b>Terms and Conditions</b></p>
+                <input type="submit" value="SIGN UP">
+                <p id="p4">Have a Account? <b>Sign In</b></p>
+            </div>
+            <div id="Form-2-Footer">
+                <div class="Social">
+                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-google"></i>
+                </div>
+            </div>
+        </div>
+
+        <div id="Form-3">
+            <div id="Form-3-Header">
+                <h1>Sign in</h1>
+            </div>
+            <div id="Form-3-Container">
+                <div>
+                    <input type="email" name="email" id="email" placeholder="Enter Email">
+                </div>
+                <div>
+                    <input type="password" name="pwd" id="pwd" placeholder="Enter Password">
+                </div>
+                <p id="p1">Forgot <b>Password</b></p>
+                <input type="submit" value="SIGN IN">
+                <p id="p5">or Sign in with</p>
+            </div>
+            <div id="Form-3-Footer">
+                <div class="Social">
+                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-google"></i>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
