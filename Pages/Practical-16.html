@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical-16</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <style>
+        body{
+            background-color: lightgrey;
+            background:linear-gradient(lightgrey,lightblue);
+            color: rgb(3, 109, 3);
+            min-height: 100vh;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        h1{
+            margin-top: 40px;
+            text-align: center;
+            font-size: 40px;
+            color: red;
+        }
+        form{
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #todo-input, #todo-button{
+            padding: 10px;
+            background-color: #fff;
+            border: none;
+            font-size: 24px;
+        }
+        
+        #todo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #todo-list {
+            width: 20%;
+            list-style: none;
+        }
+        .todo{
+            margin: 10px;
+            background-color: cornsilk;
+            color:black;
+            font-size: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .todo-item{
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        .check-btn {
+            background-color: rgb(155, 238, 155);
+            color:white;
+            padding: 16px;
+            font-size: 15px;
+            border: none;
+        }
+        .delete-btn {
+            background-color: red;
+            color:white;
+            padding: 16px;
+            font-size: 15px;
+            border: none;
+        }
+        .fa-check, .fa-trash {
+            pointer-events: none;
+        }
+        .completed {
+        text-decoration: line-through;
+        opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <form>
+        <input type="text" id="todo-input">
+        <button id="todo-button">
+        <i class="fa fa-plus-square" aria-hidden="true"></i>
+        </button>
+    </form>
+    <div id="todo-container">
+        <ul id="todo-list">
+
+        </ul>
+    </div>
+</body>
+<script>
+    const todoInput = document.getElementById("todo-input");
+    const todoButton = document.getElementById("todo-button");
+    const todoList = document.getElementById("todo-list");
+
+    todoButton.onclick=createList;
+    todoList.onclick = checkdelete;
+
+    function createList(e){
+        e.preventDefault();
+        var newDiv = document.createElement("div");
+        newDiv.classList.add("todo");
+    
+
+        var newList = document.createElement("li");
+        newList.classList.add("todo-item");
+        newList.innerHTML = todoInput.value;
+        if(todoInput.value=="") {
+        alert("List cannot be empty");
+        }
+        else {
+        newDiv.appendChild(newList);
+
+        var checkbtn = document.createElement("button");
+        checkbtn.classList.add("check-btn");
+        checkbtn.innerHTML='<i class="fa fa-check"></i>';
+        newDiv.appendChild(checkbtn);
+
+        var deletebtn = document.createElement("button");
+        deletebtn.classList.add("delete-btn");
+        deletebtn.innerHTML='<i class="fa fa-trash"></i>';
+        newDiv.appendChild(deletebtn);
+
+        todoList.appendChild(newDiv);
+        todoInput.value="";
+        }
+    }
+    function checkdelete(e) {
+        var item = e.target;
+        if(item.classList[0]=="delete-btn") {
+        var parent = item.parentNode;
+        parent.remove();
+        }
+
+        if(item.classList[0]=="check-btn") {
+        var parent = item.parentNode;
+        parent.classList.toggle("completed");
+        }
+    }
+
+</script>
+</html>
